@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="goHomeFragmentViewModel"
+            type="com.example.kubaattendance.actors.gym_owner.home.GoHomeViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="fill_parent"
+
+        android:layout_height="fill_parent">
+
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7pt"
+                    android:layout_marginRight="7pt"
+                    android:layout_marginTop="7pt"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardElevation="4dp">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="20pt"
+                    android:background="@drawable/ic_drop_down"
+                    android:clickable="true"
+                    android:fontFamily="@font/crc55"
+                    android:gravity="center"
+                    android:onClick="@{goHomeFragmentViewModel::onSelectGymButtonClicked}"
+                    android:paddingLeft="5pt"
+                    android:text="@={goHomeFragmentViewModel.gym_name}"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorBlack"
+                    tools:text="Select Gym">
+
+                </Button>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="7pt"
+                        android:layout_marginRight="7pt"
+                        android:layout_marginTop="7pt"
+                        android:clickable="true"
+                        android:onClick="@{goHomeFragmentViewModel::onGetTodaysAttendance}"
+                        android:layout_marginBottom="3.5pt"
+                        card_view:cardCornerRadius="5dp"
+                        card_view:cardElevation="4dp">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/crc55"
+                                android:gravity="center_vertical|end"
+                                android:paddingRight="10pt"
+                                android:text="@={goHomeFragmentViewModel.inCount}"
+                                android:textSize="35pt"
+                                android:textStyle="bold"
+                                tools:text="110">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3"
+                                android:background="@color/colorGreen"
+                                android:fontFamily="@font/crc55"
+                                android:gravity="center_vertical|end"
+                                android:paddingRight="10pt"
+                                android:text="Todays In Member"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="12pt"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="7pt"
+                        android:layout_marginTop="2.5pt"
+                        android:layout_marginRight="7pt"
+                        android:layout_marginBottom="3.5pt"
+                        card_view:cardCornerRadius="5dp"
+                        card_view:cardElevation="4dp"
+                        android:clickable="true"
+                        android:onClick="@{goHomeFragmentViewModel::onGetTodaysAttendance}">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/crc55"
+                                android:gravity="center_vertical|end"
+                                android:paddingRight="10pt"
+                                android:text="@={goHomeFragmentViewModel.outCount}"
+                                android:textSize="35pt"
+                                android:textStyle="bold"
+                                tools:text="101">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3"
+                                android:background="@color/colorGreen"
+                                android:fontFamily="@font/crc55"
+                                android:gravity="center_vertical|end"
+                                android:paddingRight="10pt"
+                                android:text="Todays Out Member"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="12pt"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="7pt"
+                        android:layout_marginTop="3.5pt"
+                        android:layout_marginRight="7pt"
+                        android:layout_marginBottom="7pt"
+                        card_view:cardCornerRadius="5dp"
+                        card_view:cardElevation="4dp"
+                        android:clickable="true"
+                        android:onClick="@{goHomeFragmentViewModel::onGetTodaysAttendance}">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/crc55"
+                                android:gravity="center_vertical|end"
+                                android:paddingRight="10pt"
+                                android:text="@={goHomeFragmentViewModel.totalCount}"
+                                android:textSize="35pt"
+                                android:textStyle="bold"
+                                tools:text="150">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="3"
+                                android:background="@color/colorRed"
+                                android:fontFamily="@font/crc55"
+                                android:gravity="center_vertical|end"
+                                android:paddingRight="10pt"
+                                android:text="Todays Total Member"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="12pt"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#E6ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/progressMsg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:fontFamily="@font/crc55"
+                android:text="Please wait..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

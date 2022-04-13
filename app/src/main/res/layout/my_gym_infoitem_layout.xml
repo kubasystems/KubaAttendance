@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="dMyGymInfo"
+            type="com.example.kubaattendance.actors.gym_owner.my_gyms.DMyGymInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8pt"
+            android:layout_marginTop="4pt"
+            android:layout_marginRight="8pt"
+            android:layout_marginBottom="4pt"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fontFamily="@font/crc55"
+                android:gravity="center_vertical"
+                android:paddingLeft="5pt"
+                android:text="@{dMyGymInfo.gym_name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                tools:text="Name">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/crc55"
+                android:paddingLeft="5pt"
+
+                android:text="@{`Branch : `+dMyGymInfo.gym_branch_id}"
+                tools:text="Branch">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/crc55"
+                android:paddingLeft="5pt"
+                android:text="@{dMyGymInfo.gym_active_status.equals(`1`) ? @string/active : @string/deactive}"
+                android:textColor="@{dMyGymInfo.gym_active_status.equals(`1`) ? @color/colorGreen : @color/colorRed}"
+                tools:text="Status">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1pt"
+            android:layout_marginRight="5pt"
+            android:layout_marginLeft="5pt"
+            android:background="@color/colorPrimary">
+
+        </View>
+    </LinearLayout>
+</layout>
+

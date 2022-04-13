@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ownerInfo"
+            type="com.example.kubaattendance.actors.super_admin.gym_owner.DOwnerInfo" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="3pt"
+        android:layout_marginRight="5pt"
+        android:layout_marginBottom="3pt"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60pt"
+                    android:layout_weight="2.5"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/image_pic"
+                        android:layout_width="fill_parent"
+                        android:layout_height="60pt"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_profile_demo">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="60pt"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <ProgressBar
+                            android:id="@+id/progress_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="4pt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/crc55"
+                        android:text="@{ownerInfo.gym_owner_name}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textStyle="bold"
+                        tools:text="Owner Name"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3pt"
+                        android:drawableLeft="@drawable/ic_mobile"
+                        android:drawablePadding="4dp"
+                        android:fontFamily="@font/crc55"
+                        android:text="@{ownerInfo.gym_owner_mobile}"
+                        tools:text="Owner Mobile"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_email"
+                        android:drawablePadding="4dp"
+                        android:fontFamily="@font/crc55"
+                        android:text="@{ownerInfo.gym_owner_email}"
+                        tools:text="Owner Email"></TextView>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/activeDeactiveOwner_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@{ownerInfo.is_active.equals(`1`) ? @color/colorGreen : @color/colorRed}"
+                android:fontFamily="@font/crc55"
+                android:text="@{ownerInfo.is_active.equals(`1`) ? @string/g_active : @string/g_deactive}"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorWhite"
+                tools:background="@color/colorRed"
+                tools:text="Status">
+
+            </Button>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

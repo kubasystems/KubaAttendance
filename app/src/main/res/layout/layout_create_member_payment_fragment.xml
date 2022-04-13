@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="goMembPaymentViewModel"
+            type="com.example.kubaattendance.actors.gym_owner.payments.GoMembPaymentViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".actors.gym_owner.payments.fragments.GoMembPaymentFragment">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginTop="6pt"
+                    android:layout_marginRight="5pt"
+                    android:layout_marginBottom="2.5pt"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardElevation="4dp">
+
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="20pt"
+                        android:background="@drawable/ic_drop_down"
+                        android:clickable="true"
+                        android:fontFamily="@font/crc55"
+                        android:gravity="start|center_vertical"
+                        android:onClick="@{goMembPaymentViewModel::selectGymButtonClicked}"
+                        android:paddingLeft="5pt"
+                        android:text="@={goMembPaymentViewModel.gymName}"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                        tools:text="Select Gym">
+
+                    </Button>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginTop="3pt"
+                    android:layout_marginRight="5pt"
+
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardElevation="4dp">
+
+                    <Button
+                        android:id="@+id/select_member_btn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="20pt"
+                        android:visibility="gone"
+                        android:background="@drawable/ic_drop_down"
+                        android:clickable="true"
+                        android:fontFamily="@font/crc55"
+                        android:gravity="start|center_vertical"
+                        android:onClick="@{goMembPaymentViewModel::selectMemberButtonClicked}"
+                        android:paddingLeft="5pt"
+                        android:text="@={goMembPaymentViewModel.memberName}"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+
+                        tools:text="Select Member"></Button>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/package_details_card"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginTop="6pt"
+                    android:layout_marginRight="5pt"
+
+                   android:visibility="gone"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardElevation="4dp"
+                    card_view:contentPadding="6pt">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:fontFamily="@font/crc55"
+                            android:layout_gravity="start|center_vertical"
+                            android:paddingLeft="2pt"
+                            android:text="Running Package Details"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textStyle="bold"></TextView>
+
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.2pt"
+                            android:layout_marginTop="2pt"
+                            android:background="@color/colorPrimary">
+
+                        </View>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="2pt"
+                            android:text="@={goMembPaymentViewModel.packageName}"
+
+
+
+                            tools:text="Running Package : Golden Plan">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="2pt"
+                            android:text="@{`Package Amount : `+goMembPaymentViewModel.pkg_amount}"
+
+                            tools:text="Package Amount : 5000">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="2pt"
+                            android:text="@={goMembPaymentViewModel.totalAmountReceived}"
+
+
+                            tools:text="Total Received Amount : 00">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="2pt"
+                            android:text="@={goMembPaymentViewModel.remainingAmount}"
+                            android:textColor="@color/colorRed"
+                            tools:text="Total Pending Amount : 00">
+
+                        </TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/paiying_amt_details_card"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginTop="6pt"
+                    android:layout_marginRight="5pt"
+                     android:visibility="gone"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardElevation="4dp"
+                    card_view:contentPadding="6pt">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/crc55"
+                            android:paddingLeft="2pt"
+                            android:text="Paying Amount Details"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.2pt"
+                            android:layout_marginTop="2pt"
+                            android:background="@color/colorPrimary">
+
+                        </View>
+
+                        <RadioGroup
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="3pt"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton_pending_amt"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5pt"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:fontFamily="@font/crc55"
+                                android:onClick="@{goMembPaymentViewModel::remainingAmountChecked}"
+                                android:text="@={goMembPaymentViewModel.remainingAmount}"
+
+                                tools:text="Remaining amount - 000" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_other_amt"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2pt"
+                                android:layout_weight="1"
+                                android:checked="false"
+                                android:fontFamily="@font/crc55"
+                                android:onClick="@{goMembPaymentViewModel::otherAmountChecked}"
+                                android:text="@={goMembPaymentViewModel.otherAmount}"
+
+                                tools:text="Other" />
+                        </RadioGroup>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5pt"
+                            android:theme="@style/TextLabel">
+
+                            <EditText
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/crc55"
+                                android:hint="Paiying Amount*"
+                                android:imeOptions="actionNext"
+                                android:inputType="phone"
+                                android:text="@={goMembPaymentViewModel.paiyingAmount}"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5pt"
+                            android:theme="@style/TextLabel">
+
+                            <EditText
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/crc55"
+                                android:hint="Remark*"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:text="@={goMembPaymentViewModel.remark}"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="10pt"></View>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="5pt">
+
+                </View>
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="15dp"
+            android:background="@drawable/ripple_color"
+            android:clickable="true"
+            android:onClick="@{goMembPaymentViewModel::submitMemberPaymentFabClicked}"
+            android:src="@drawable/ic_done_black_24dp" />
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#E6ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/progressMsg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:fontFamily="@font/crc55"
+                android:text="Please wait..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

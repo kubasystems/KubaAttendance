@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sa_nav_graph"
+    app:startDestination="@id/sa_home_fragment">
+    <fragment
+        android:id="@+id/sa_home_fragment"
+        android:name="com.example.kubaattendance.actors.super_admin.homepage.SaHomeFragment"
+        android:label="KuBa - Gym" />
+
+
+    <fragment
+        android:id="@+id/sa_gyms_fragment"
+        android:name="com.example.kubaattendance.actors.super_admin.gyms.SaGymsFragment"
+        android:label="Gyms"
+        tools:layout="@layout/sa_gyms_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_createGymFragment"
+            app:destination="@id/createGymFragment" />
+        <action
+            android:id="@+id/action_update_gym_device_id_fragment"
+            app:destination="@id/update_gym_device_id_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/update_gym_device_id_fragment"
+        android:name="com.example.kubaattendance.actors.super_admin.gyms.UpdateGymDeviceFragment"
+        android:label="Update Gym Device Id">
+        <argument
+            android:name="DGymInfo"
+            android:defaultValue="@null"
+            app:argType="com.example.kubaattendance.actors.super_admin.gyms.UpdateDeviceIdDataPasser"
+            app:nullable="true" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/createGymFragment"
+        android:name="com.example.kubaattendance.actors.super_admin.gyms.create.CreateGymFragment"
+        android:label="Create Gym"
+        tools:layout="@layout/create_gym_fragment">
+
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment">
+
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/sa_gym_owner_fragment"
+        android:name="com.example.kubaattendance.actors.super_admin.gym_owner.SaGymOwnersFragment"
+        android:label="Gym Owners"
+        tools:layout="@layout/sa_gym_owners_fragments">
+        <action
+            android:id="@+id/action_mainFragment_to_createGymOwnerFragment"
+            app:destination="@id/createGymOwnerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createGymOwnerFragment"
+        android:name="com.example.kubaattendance.actors.super_admin.gym_owner.create.CreateGymOwnerFragment"
+        android:label="Create Gym Owner"
+        tools:layout="@layout/create_gym_owner_fragment" />
+    <fragment
+        android:id="@+id/sa_profile_fragment"
+        android:name="com.example.kubaattendance.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/profile_fragment"/>
+
+    <dialog
+        android:id="@+id/logoutFragment"
+        android:name="com.example.kubaattendance.logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/logout_fragment"/>
+
+    <dialog
+        android:id="@+id/cutomSpinnerFragment"
+        android:name="com.example.kubaattendance.utils.custom_spinner.CustomSpinnerFragment"
+        android:label="Select Item"
+        tools:layout="@layout/layout_custom_spinner">
+
+        <argument
+            app:argType="com.example.kubaattendance.utils.custom_spinner.CustomSpinnerDataHolder"
+            android:name="CustomSpinnerDataHolder"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </dialog>
+
+
+
+</navigation>

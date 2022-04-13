@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pkgViewModel"
+            type="com.example.kubaattendance.actors.gym_owner.pkg.PkgViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5pt"
+                android:layout_marginTop="5pt"
+                android:layout_marginRight="5pt"
+                card_view:cardCornerRadius="5dp"
+                card_view:cardElevation="4dp">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="20pt"
+                    android:background="@drawable/ic_drop_down"
+                    android:clickable="true"
+                    android:fontFamily="@font/crc55"
+                    android:gravity="center"
+                    android:onClick="@{pkgViewModel::onSelectGymButtonClicked}"
+                    android:paddingLeft="5pt"
+                    android:text="@={pkgViewModel.gymName}"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+                    tools:text="Select Gym">
+
+                </Button>
+
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/search_edt"
+                android:layout_width="fill_parent"
+                android:layout_height="15pt"
+                android:layout_marginLeft="5pt"
+                android:layout_marginTop="5pt"
+                android:layout_marginRight="5pt"
+                android:background="@drawable/round_edt"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/crc55"
+                android:hint="Search..."
+                android:paddingLeft="5pt">
+
+            </EditText>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="4pt"
+                tools:listitem="@layout/pkgs_items">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="15dp"
+            android:background="@drawable/ripple_color"
+            android:clickable="true"
+            android:onClick="@{pkgViewModel::createPkgFabClicked}"
+
+            android:src="@drawable/ic_add_black_24dp" />
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#E6ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/progressMsg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:fontFamily="@font/crc55"
+                android:text="Please wait..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

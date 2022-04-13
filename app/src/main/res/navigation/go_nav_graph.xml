@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/go_nav_graph"
+    app:startDestination="@id/go_home_fragment">
+
+    <fragment
+        android:id="@+id/go_home_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.home.GoHomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/actionAttendanceFragment"
+            app:destination="@id/go_attendance_fragment">
+
+        </action>
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/go_members_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.members.GoMembersFragment"
+        android:label="Members">
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+        <action
+            android:id="@+id/actionCreateGymMember"
+            app:destination="@id/create_gym_member_fragment">
+
+        </action>
+        <action
+            android:id="@+id/actionViewMemberIdCard"
+            app:destination="@id/view_member_id_card_fragment">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/create_gym_member_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.members.CreateGymMemberFragment"
+        android:label="Create Gym Member">
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+        <argument
+            android:name="PassingData"
+            android:defaultValue="0"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/go_attendance_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.attendance.MemberAttendanceFragment"
+        android:label="Member Attendance">
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+        <argument
+            android:name="PassingData"
+            android:defaultValue="0"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/go_payment_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.payments.fragments.GoMembPaymentFragment"
+        android:label="Member Payment">
+
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+        <action
+            android:id="@+id/actionCreateMemberPayment"
+            app:destination="@id/view_create_member_payment_fragment">
+
+        </action>
+        <action
+            android:id="@+id/actionOpenPackageHistoryFragment"
+            app:destination="@id/packageHistoryFragment_spinner">
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/view_create_member_payment_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.payments.fragments.CreateMemberPaymentFragment"
+        android:label="Create Member Payment">
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/go_pkgs_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.pkg.PkgsFragment"
+        android:label="Packages">
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+        <action
+            android:id="@+id/actionCreatePackage"
+            app:destination="@id/create_pkg_fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/create_pkg_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.pkg.CreatePkgFragment"
+        android:label="Create Package">
+
+        <action
+            android:id="@+id/custom_spinner_data"
+            app:destination="@id/cutomSpinnerFragment_spinner">
+
+        </action>
+
+        <argument
+            android:name="PkgViewModel"
+            android:defaultValue="@null"
+            app:argType="com.example.kubaattendance.actors.gym_owner.pkg.PkgViewModel"
+            app:nullable="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/view_my_gyms_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.my_gyms.MyGymsFragment"
+        android:label="My Gyms" />
+
+    <dialog
+        android:id="@+id/cutomSpinnerFragment_spinner"
+        android:name="com.example.kubaattendance.utils.custom_spinner.CustomSpinnerFragment"
+        android:label="Select Item"
+        tools:layout="@layout/layout_custom_spinner">
+
+        <argument
+            android:name="CustomSpinnerDataHolder"
+            android:defaultValue="@null"
+            app:argType="com.example.kubaattendance.utils.custom_spinner.CustomSpinnerDataHolder"
+            app:nullable="true" />
+    </dialog>
+    <dialog
+        android:id="@+id/go_logoutFragment"
+        android:name="com.example.kubaattendance.logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/logout_fragment" />
+
+
+    <fragment
+        android:id="@+id/view_member_id_card_fragment"
+        android:name="com.example.kubaattendance.actors.gym_owner.id_card.MemberIdCardFragment"
+        android:label="Identy Card">
+
+        <argument
+            android:name="PassingData"
+            android:defaultValue="0"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/go_profile_fragment"
+        android:name="com.example.kubaattendance.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <dialog
+        android:id="@+id/packageHistoryFragment_spinner"
+        android:name="com.example.kubaattendance.actors.gym_owner.payments.payment_history.HistoryPackageFragment"
+        android:label="Choose Package"
+        tools:layout="@layout/package_history_item">
+
+        <argument
+            android:name="PackageHistoryDataHolder"
+            android:defaultValue="@null"
+            app:argType="com.example.kubaattendance.actors.gym_owner.payments.payment_history.PackageHistoryDataHolder"
+            app:nullable="true" />
+    </dialog>
+
+
+</navigation>

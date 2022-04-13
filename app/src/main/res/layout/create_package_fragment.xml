@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pkgViewModel"
+            type="com.example.kubaattendance.actors.gym_owner.pkg.PkgViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/back_gradient"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/mainLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/round_image"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="6pt"
+                                android:layout_marginTop="6pt"
+                                android:layout_marginRight="6pt"
+                                card_view:cardCornerRadius="5dp"
+                                card_view:cardElevation="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="20pt"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:fontFamily="@font/crc55"
+                                        android:gravity="center"
+                                        android:text="Package Details"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                        android:textColor="@color/colorWhite"
+                                        android:textStyle="bold" />
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="8pt"
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:id="@+id/gym_name_til"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:theme="@style/TextLabel">
+
+                                            <EditText
+                                                android:id="@+id/gym_name_et"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:clickable="false"
+                                                android:drawablePadding="5dp"
+                                                android:editable="false"
+                                                android:fontFamily="@font/crc55"
+                                                android:hint="Gym Name"
+                                                android:imeOptions="actionNext"
+                                                android:inputType="textNoSuggestions"
+                                                android:text="@={pkgViewModel.gymName}" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <Button
+                                            android:id="@+id/select_gym_cv"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="20pt"
+                                            android:layout_marginTop="2pt"
+                                            android:background="@drawable/ic_drop_down"
+                                            android:clickable="true"
+                                            android:fontFamily="@font/crc55"
+                                            android:gravity="center"
+                                            android:onClick="@{pkgViewModel::onSelectGymButtonClicked}"
+                                            android:paddingLeft="5pt"
+                                            android:text="@={pkgViewModel.gymName}"
+                                            android:textAllCaps="false"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                            android:visibility="gone"
+                                            tools:text="Select Gym">
+
+                                        </Button>
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:theme="@style/TextLabel">
+
+                                            <EditText
+
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:drawablePadding="5dp"
+                                                android:fontFamily="@font/crc55"
+                                                android:hint="Package Name"
+                                                android:imeOptions="actionNext"
+                                                android:inputType="textNoSuggestions|text"
+                                                android:text="@={pkgViewModel.pkg_name}" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:fontFamily="@font/crc55"
+                                            android:paddingLeft="2pt"
+                                            android:text="Package Type"
+                                            android:textSize="7.5pt">
+
+
+                                        </TextView>
+
+                                        <RadioGroup
+
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:orientation="horizontal">
+
+                                            <RadioButton
+                                                android:id="@+id/radioButton"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:checked="true"
+                                                android:fontFamily="@font/crc55"
+                                                android:onClick="@{pkgViewModel::monthlyRadioClicked}"
+                                                android:text="Monthly" />
+
+                                            <RadioButton
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:checked="false"
+                                                android:fontFamily="@font/crc55"
+                                                android:onClick="@{pkgViewModel::yearlyRadioClicked}"
+                                                android:text="Yearly" />
+                                        </RadioGroup>
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:fontFamily="@font/crc55"
+                                            android:paddingLeft="2pt"
+                                            android:text="@={pkgViewModel.duration_hint}"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                            tools:text="Enter Package Duration"></TextView>
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:theme="@style/TextLabel">
+
+                                            <EditText
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:digits="0123456789"
+                                                android:drawablePadding="5dp"
+                                                android:fontFamily="@font/crc55"
+                                                android:imeOptions="actionNext"
+                                                android:inputType="textNoSuggestions|phone"
+                                                android:maxLength="2"
+                                                android:paddingLeft="5pt"
+                                                android:text="@={pkgViewModel.pkg_duration}" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:fontFamily="@font/crc55"
+                                            android:paddingLeft="2pt"
+                                            android:text="Enter Package amount"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                            android:textSize="7pt"></TextView>
+
+                                        <EditText
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:digits="+1234567890"
+                                            android:drawablePadding="5dp"
+                                            android:fontFamily="@font/crc55"
+
+                                            android:imeOptions="actionNext"
+                                            android:inputType="textNoSuggestions|text"
+                                            android:text="@={pkgViewModel.pkg_amount}" />
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:fontFamily="@font/crc55"
+                                            android:paddingLeft="2pt"
+                                            android:text="Enter Package Discount(%)"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                            android:textSize="7pt"></TextView>
+
+                                        <EditText
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:fontFamily="@font/crc55"
+                                            android:imeOptions="actionDone"
+                                            android:inputType="textNoSuggestions|text"
+                                            android:maxLength="10"
+                                            android:text="@={pkgViewModel.pkg_discount}" />
+
+
+                                        <View
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="4pt">
+
+
+                                        </View>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="20pt">
+
+                            </View>
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#E6ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/progressMsg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:fontFamily="@font/crc55"
+                android:text="Please wait..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            </TextView>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="15dp"
+            android:background="@drawable/ripple_color"
+            android:clickable="true"
+            android:onClick="@{pkgViewModel::onCreatePackageClicked}"
+            android:src="@drawable/ic_done_black_24dp" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

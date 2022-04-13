@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="memberPackages"
+            type="com.example.kubaattendance.actors.gym_owner.payments.MemberPackages" />
+    </data>
+    <LinearLayout
+        android:id="@+id/item_li"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5pt"
+        android:layout_marginRight="5pt"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3pt"
+            android:fontFamily="@font/crc55"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="@{memberPackages.pkg_name}"
+            tools:text="Package Name">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/crc55"
+            android:text="@{`Amount : `+memberPackages.pkg_amount}"
+            tools:text="Package Amount : 10000"></TextView>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/crc55"
+            android:text="@{`From Date : `+memberPackages.pkg_from_date}"
+            tools:text="Package From : yyyy-mm-dd"></TextView>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/crc55"
+            android:text="@{`To Date: `+memberPackages.pkg_to_date}"
+            tools:text="Package To : yyyy-mm-dd"></TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1pt"
+            android:layout_marginTop="2pt"
+            android:background="@color/colorPrimary">
+
+        </View>
+
+    </LinearLayout>
+</layout>

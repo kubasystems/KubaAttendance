@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gymDeviceViewModel"
+            type="com.example.kubaattendance.actors.gym_device.GymDeviceViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".actors.gym_device.activity.GdHomeActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="28pt"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:fontFamily="@font/crc55"
+                        android:gravity="center_vertical"
+                        android:onClick="@{gymDeviceViewModel::onLogoutButtonClicked}"
+                        android:paddingLeft="10pt"
+                        android:text="@={gymDeviceViewModel.gym_name}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        tools:text="Gym Name">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical"
+                        android:padding="2pt"
+                        android:gravity="center_vertical"
+                        android:src="@drawable/ic_logout_app">
+
+                        <TextView
+                            android:id="@+id/timer_date_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:clickable="true"
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+
+                            android:textColor="@color/colorWhite"
+
+                            tools:text="2020-01-01"></TextView>
+
+                        <TextView
+                            android:id="@+id/timer_time_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+
+                            android:clickable="true"
+
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+
+                            android:textColor="@color/colorWhite"
+
+                            tools:text="11:30:20"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <com.budiyev.android.codescanner.CodeScannerView
+                        android:id="@+id/scanner_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:autoFocusButtonColor="@android:color/white"
+                        app:autoFocusButtonVisible="true"
+                        app:flashButtonColor="@android:color/white"
+                        app:flashButtonVisible="true"
+                        app:frameAspectRatioHeight="1"
+                        app:frameAspectRatioWidth="1"
+                        app:frameColor="@android:color/white"
+                        app:frameCornersRadius="0dp"
+                        app:frameCornersSize="50dp"
+                        app:frameSize="0.75"
+                        app:frameThickness="2dp"
+                        app:maskColor="#77000000" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="4.5pt"
+                android:layout_weight="2.2"
+                card_view:cardCornerRadius="15dp"
+                card_view:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/colorRipple"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:onClick="@{gymDeviceViewModel::viewAttendance}"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0.1pt"
+                            android:layout_marginBottom="0.1pt"
+                            android:layout_weight="1"
+                            android:background="@color/colorWhite"
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10pt"
+                            android:text="In Member"
+                            android:textSize="10pt"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                        <TextView
+
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="0.1pt"
+                            android:layout_marginBottom="0.1pt"
+                            android:layout_weight="1.5"
+                            android:background="@color/colorWhite"
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center"
+                            android:text="@={gymDeviceViewModel.todaysInCount}"
+                            android:textSize="14pt"
+                            android:textStyle="bold"
+                            tools:text="0">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:onClick="@{gymDeviceViewModel::viewAttendance}"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginTop="0.1pt"
+                            android:layout_marginRight="0.1pt"
+                            android:layout_weight="1"
+                            android:background="@color/colorWhite"
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10pt"
+                            android:text="Out Member"
+                            android:textSize="10pt"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="0.1pt"
+                            android:layout_marginTop="0.1pt"
+                            android:layout_weight="1.5"
+                            android:background="@color/colorWhite"
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center"
+                            android:text="@={gymDeviceViewModel.todaysOutCount}"
+                            android:textSize="14pt"
+                            android:textStyle="bold"
+                            tools:text="0">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:onClick="@{gymDeviceViewModel::viewAttendance}"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary"
+
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center_vertical"
+
+                            android:paddingLeft="10pt"
+                            android:text="Total Member"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="10pt"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.5"
+                            android:background="@color/colorPrimary"
+                            android:fontFamily="@font/crc55"
+                            android:gravity="center"
+                            android:text="@={gymDeviceViewModel.todaysTotalCount}"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14pt"
+                            android:textStyle="bold"
+                            tools:text="0">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/hide_ss"
+            android:visibility="gone"
+            layout="@layout/layout_success_fail">
+
+        </include>
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#E6ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/progressMsg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:fontFamily="@font/crc55"
+                android:text="Please wait..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sa_home_fragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home">
+    </item>
+    <item
+        android:id="@+id/sa_gyms_fragment"
+        android:icon="@drawable/ic_gyms_24dp"
+        android:title="Gyms">
+    </item>
+    <item
+        android:id="@+id/sa_gym_owner_fragment"
+        android:icon="@drawable/ic_gym_owner_24dp"
+        android:title="Gym Owner">
+    </item>
+    <item
+        android:id="@+id/sa_profile_fragment"
+        android:icon="@drawable/ic_profile_24dp"
+        android:title="Profile">
+    </item>
+
+    <item
+        android:id="@+id/logoutFragment"
+        android:icon="@drawable/ic_logout_24dp"
+        android:title="Logout">
+    </item>
+
+</menu>

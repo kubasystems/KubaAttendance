@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/go_home_fragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home">
+
+    </item>
+    <item
+        android:id="@+id/go_profile_fragment"
+        android:icon="@drawable/ic_profile_24dp"
+        android:title="Profile"></item>
+    <item
+        android:id="@+id/go_attendance_fragment"
+        android:icon="@drawable/ic_attendance_24dp"
+        android:title="Attendance"></item>
+    <item
+        android:id="@+id/view_my_gyms_fragment"
+        android:icon="@drawable/ic_gyms_24dp"
+        android:title="My Gyms"></item>
+    <item
+        android:id="@+id/go_logoutFragment"
+        android:icon="@drawable/ic_logout_24dp"
+        android:title="Logout"></item>
+    <item
+        android:id="@+id/create_view_members_fragment"
+        android:title="Members">
+        <menu>
+            <item
+                android:id="@+id/create_gym_member_fragment"
+                android:icon="@drawable/ic_gym_owner_24dp"
+                android:title="Create Member"></item>
+            <item
+                android:id="@+id/go_members_fragment"
+                android:icon="@drawable/ic_members_24dp"
+                android:title="View Members"></item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/create_view_payment_fragment"
+        android:title="Payment">
+        <menu>
+            <item
+                android:id="@+id/view_create_member_payment_fragment"
+                android:icon="@drawable/ic_payment_black_24dp"
+                android:title="Create Payment"></item>
+            <item
+                android:id="@+id/go_payment_fragment"
+                android:icon="@drawable/ic_view_payments_black_24dp"
+                android:title="View Payment"></item>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/create_view_pkgs_fragment"
+        android:title="Package">
+        <menu>
+            <item
+                android:id="@+id/create_pkg_fragment"
+                android:icon="@drawable/ic_package_24dp"
+                android:title="Create Package"></item>
+            <item
+                android:id="@+id/go_pkgs_fragment"
+                android:icon="@drawable/ic_view_payments_24dp"
+                android:title="View Packages"></item>
+        </menu>
+    </item>
+
+
+</menu>

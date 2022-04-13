@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="todaysAttendance"
+            type="com.example.kubaattendance.data.models.GdTodaysAttendance" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="20pt"
+            android:layout_marginTop="2pt"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:fontFamily="@font/crc55"
+                android:gravity="center_vertical"
+                android:paddingLeft="3pt"
+                android:text="@{todaysAttendance.name}"
+                tools:text="Member Name">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/in_time_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.6"
+                android:fontFamily="@font/crc55"
+                android:gravity="center"
+                android:paddingLeft="3pt"
+                tools:text="In">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/out_time_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.6"
+                android:fontFamily="@font/crc55"
+                android:gravity="center"
+                android:paddingLeft="3pt"
+                tools:text="Out">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_time_inGym_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.6"
+                android:fontFamily="@font/crc55"
+                android:gravity="center"
+                android:paddingLeft="3pt"
+                tools:text="Spend">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2pt">
+
+        </View>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2pt"
+            android:background="@color/colorPrimary">
+
+        </View>
+    </LinearLayout>
+
+
+</layout>

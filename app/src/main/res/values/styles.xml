@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@android:color/white</item>
+
+
+    </style>
+    <style name="TextLabel" parent="ThemeOverlay.AppCompat.Light">
+        //hint color And Label Color in False State
+        <item name="android:textColorHint">@color/colorIcon</item>
+        <item name="colorControlNormal">@color/colorIcon</item>
+        <item name="android:textSize">15sp</item>
+        //Label color in True State And Bar Color False And True State
+        <item name="colorAccent">@color/colorIcon</item>
+
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+    </style>
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/crc55</item>
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+    <style name="Style_TextView">
+        <item name="fontFamily">@font/crc55</item>
+    </style>
+
+
+
+</resources>

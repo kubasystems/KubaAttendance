@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">KuBa-Gym</string>
+
+    <array name="gyms">
+        <item>Select Gym</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pkg_plan"><b>Package Plan : </b></string>
+
+    <string name="active">Gym is active</string>
+    <string name="deactive">Gym is deactive</string>
+
+    <string name="g_active">Active</string>
+    <string name="g_deactive">Deactive</string>
+
+    <string name="monthly"> (Monthly)</string>
+    <string name="yearly"> (Yearly)</string>
+
+    <string-array name="Animals">
+        <item>Select Animal!!</item>
+        <item>Lion</item>
+        <item>Tiger</item>
+        <item>Elephant</item>
+        <item>Zebra</item>
+        <item>Giraffe</item>
+        <item>Deer</item>
+    </string-array>
+</resources>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="authViewModel"
+            type="com.example.kubaattendance.authentication.AuthViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/root_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".authentication.LoginActivity">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+            <LinearLayout
+
+
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/back_gradient"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="30pt"
+                    android:background="@drawable/back_gradient"
+                    android:orientation="horizontal">
+
+
+
+                    <TextView
+                        android:id="@+id/toolbarTitle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/crc55"
+                        android:gravity="center"
+                        android:text="Login your Device"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorWhite"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/round_image">
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/crc55"
+                                android:text="KuBa"
+                                android:textSize="25pt"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/crc55"
+                                android:text="Gym - Attendance"
+                                android:textSize="10pt"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginLeft="13pt"
+                                android:layout_marginTop="13pt"
+                                android:layout_marginRight="13pt"
+                                card_view:cardCornerRadius="15dp"
+                                card_view:cardElevation="8dp">
+
+                                <ScrollView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="8pt"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/device_id_tv"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="15pt"
+                                            android:gravity="center"
+                                            android:fontFamily="@font/crc55"
+                                            android:background="@drawable/round_button_green"
+                                            android:textColor="@color/colorWhite"
+                                            android:text="Device Id : sdsf"
+                                            android:layout_marginTop="2pt">
+
+                                        </TextView>
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:theme="@style/TextLabel">
+
+                                            <EditText
+                                                android:id="@+id/username_edt"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:drawablePadding="5dp"
+                                                android:fontFamily="@font/crc55"
+                                                android:hint="User name"
+                                                android:imeOptions="actionNext"
+                                                android:inputType="textNoSuggestions"
+                                                android:text="@={authViewModel.username}" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:theme="@style/TextLabel">
+
+                                            <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+                                                android:id="@+id/password_edt"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:drawablePadding="5dp"
+                                                android:fontFamily="@font/crc55"
+                                                android:hint="Password"
+                                                android:imeOptions="actionDone"
+                                                android:inputType="textPassword|textNoSuggestions"
+                                                android:text="@={authViewModel.password}"
+                                                app:drawable_hide="@drawable/ic_visibility_black_24dp"
+                                                app:drawable_show="@drawable/ic_visibility_off_black_24dp" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <com.google.android.material.textfield.TextInputLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:theme="@style/TextLabel">
+
+                                            <EditText
+
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:drawablePadding="5dp"
+                                                android:fontFamily="@font/crc55"
+                                                android:hint="Branch Code"
+                                                android:imeOptions="actionDone"
+                                                android:inputType="text|textNoSuggestions"
+                                                android:text="@={authViewModel.gym_branch_id}" />
+                                        </com.google.android.material.textfield.TextInputLayout>
+
+                                        <Button
+
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5pt"
+                                            android:background="@drawable/round_button"
+                                            android:clickable="true"
+                                            android:fontFamily="@font/crc55"
+                                            android:onClick="@{authViewModel::onLoginButtonClicked}"
+                                            android:text="Login"
+                                            android:textAllCaps="false"
+                                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                                            android:textColor="@color/colorWhite" />
+
+
+                                    </LinearLayout>
+                                </ScrollView>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#E6ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/progressMsg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:fontFamily="@font/crc55"
+                android:text="Please wait..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

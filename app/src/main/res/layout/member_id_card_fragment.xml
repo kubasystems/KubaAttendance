@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="memberIdCardViewModel"
+            type="com.example.kubaattendance.actors.gym_owner.id_card.MemberIdCardViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+            <LinearLayout
+                android:id="@+id/main_li"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10pt"
+                android:background="@color/colorWhite"
+                android:gravity="center_horizontal|center"
+                android:orientation="vertical"
+
+                tools:context=".actors.gym_owner.id_card.MemberIdCardFragment">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2pt"
+                    android:fontFamily="@font/crc55"
+                    android:text="@={memberIdCardViewModel.gymName}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold"
+                    tools:text="Gym Name">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/crc55"
+                    android:text="@{`Branch : `+memberIdCardViewModel.gymBranchCode}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    tools:text="Gym Branch : fgdsfgd">
+
+                </TextView>
+
+
+                <RelativeLayout
+                    android:layout_width="40pt"
+                    android:layout_height="40pt">
+
+                    <ImageView
+                        android:id="@+id/member_photo_img"
+                        android:layout_width="40pt"
+                        android:layout_height="50pt"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_profile_demo">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="40pt"
+                        android:layout_height="50pt"
+                        android:gravity="center">
+
+                        <ProgressBar
+                            android:id="@+id/progress_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/crc55"
+                    android:text="@={memberIdCardViewModel.memberName}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold"
+                    tools:text="Member Name">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/qr_code_img"
+                    android:layout_width="80pt"
+                    android:layout_height="80pt"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_default_qrcode">
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/crc55"
+                    android:text="@={memberIdCardViewModel.qrCodeContent}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    tools:text="Qr Content">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:layout_marginRight="10pt"
+                    android:fontFamily="@font/crc55"
+                    android:gravity="center_horizontal"
+                    android:ellipsize="end"
+                    android:text="@{`Address : `+memberIdCardViewModel.memberAddress}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    tools:text="Address : Flat - 201, Samarth Residency,Sadashiv dangat nager, near NAvle bridge, Ambegoan, Pune, 411041">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/crc55"
+                    android:text="@{`DOJ : `+memberIdCardViewModel.memberDOJ}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textStyle="bold"
+                    tools:text="Date Of Joining : 11 Mar 2020">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/crc55"
+                    android:text="@{`Ph : `+memberIdCardViewModel.memberPhone+` Email : `+memberIdCardViewModel.memberEmail}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textStyle="bold"
+                    tools:text="Ph : 8806283610 | Email : amolwakchaure14@gmail.com">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/crc55"
+                    android:textColor="@color/colorBlack"
+                    android:text="www.kubasystems.com">
+
+                </TextView>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="10pt">
+
+                </View>
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="15dp"
+            android:background="@drawable/ripple_color"
+            android:onClick="@{memberIdCardViewModel::shareIdCardBtnClicked}"
+            android:clickable="true"
+
+            android:src="@drawable/ic_share_black_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="15dp"
+            android:background="@drawable/ripple_color"
+            android:onClick="@{memberIdCardViewModel::saveIdCardBtnClicked}"
+            android:clickable="true"
+
+            android:src="@drawable/ic_done_black_24dp" />
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#E6ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/progressMsg_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3pt"
+                android:fontFamily="@font/crc55"
+                android:text="Please wait..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+            </TextView>
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
